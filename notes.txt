@@ -1,0 +1,97 @@
+Last login: Mon Mar 20 18:05:59 on ttys005
+BlackLion:learning2 Carlos$ ls
+LICENSE.MD		index.html		package.json		style			webpack.config.js
+README.md		node_modules		src			test
+BlackLion:learning2 Carlos$ cd
+BlackLion:~ Carlos$ ls
+Applications		IdeaProjects		Pictures		data			photoship
+Creative Cloud Files	Library			Public			echo			target
+Desktop			Movies			anaconda		eclipse
+Documents		Music			cloud			javascript
+Downloads		Notes			configs			mne_data
+BlackLion:~ Carlos$ cd javascript/
+BlackLion:javascript Carlos$ ls
+ReduxSimpleStarter	learning2		npm-debug.log		starter-redux
+coloRequests		my-project		proj2-learn-redux	strangerThings
+exerciseCatalogProject	node_modules		proj3-learn-redux
+BlackLion:javascript Carlos$ mkdir notes
+BlackLion:javascript Carlos$ cd notes
+BlackLion:notes Carlos$ ls
+BlackLion:notes Carlos$ vim msyql.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GRANT ALL on mydb.* to 'myusr'@'localhost' identified by '123456';
+FLUSH PRIVILEGES;
+
+########################################
+Query :
+
+select * from events;
+
+
+#######################################
+App.js file :
+var mysql  = require('mysql');
+var dbconn = mysql.createConnection({
+  host     : '127.0.0.1',
+  user     : 'myusr',
+  password : '123456',
+  database : 'time'
+});
+
+dbconn.connect(function(err){
+  if(err){
+    console.log('Database connection error');
+  }else{
+    console.log('Database connection successful');
+  }
+});
+
+var record= { event: 'this is a test event', start_time: '2018-01-19 03:14:07', end_time: '2015-01-19 03:14:07' };
+
+dbconn.query('INSERT INTO events SET ?', record, function(err,res){
+  if(err) throw err;
+
+  console.log('Last record insert id:', res.insertId);
+});
+
+dbconn.end(function(err) {
+  // Function to close database connection
+});
+
+
+
+##########################################
+install npm: centos 7
+
+curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
+
+
+

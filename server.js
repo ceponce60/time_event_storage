@@ -5,7 +5,7 @@ var util = require('util');
 
 
 var server = http.createServer(function (req, res) {
-    if ( req.connection.parser.incoming.url = "hereiamfindme") {
+    if ( req.connection.parser.incoming.url == "/hereiamfindme") {
 	displayData(res);
     } else if (req.method.toLowerCase() == 'get') {
 	console.log(req.connection.parser.incoming.url);
